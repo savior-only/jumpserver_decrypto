@@ -729,6 +729,5 @@ if __name__ == "__main__":
     if config.type == 2:
         result = get_postgresql_conn()
 
-    f = open("jumpserver.csv", "w", newline="")
-    write_data_to_file(f, result)
-    f.close()
+    with open("jumpserver.csv", "w", newline="", encoding="utf-8") as f:
+        write_data_to_file(f, result)
